@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "579297532625",
+    "project_id": "jamesecommerce-b2968",
+    "storage_bucket": "jamesecommerce-b2968.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579297532625:android:cb49a92dccab56003ac3f0",
+        "android_client_info": {
+          "package_name": "com.james.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579297532625-ke3lnbkl9i6b36imd9rq19fuqmp44tsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlRdVgvHegLORXmeVej_KSsUn-SWukB7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579297532625-ke3lnbkl9i6b36imd9rq19fuqmp44tsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
