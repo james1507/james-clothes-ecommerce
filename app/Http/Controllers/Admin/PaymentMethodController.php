@@ -370,7 +370,33 @@ class PaymentMethodController extends Controller
                 ]),
                 'updated_at' => now()
             ]);
-        }
+        }elseif ($name == 'vnpay') {
+            $payment = BusinessSetting::where('type', 'vnpay')->first();
+            if (isset($payment) == false) {
+                DB::table('business_settings')->insert([
+                    'type' => 'vnpay',
+                    'value' => json_encode([
+                        'status' => 1,
+                        'vnp_TmnCode' => '',
+                        'vnp_HashSecret' => '',
+                        'vnp_Url' => '',
+                    ]),
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            } else {
+                DB::table('business_settings')->where(['type' => 'vnpay'])->update([
+                    'type' => 'vnpay',
+                    'value' => json_encode([
+                        'status' => $request['status'],
+                        'vnp_TmnCode' => $request['vnp_TmnCode'],
+                        'vnp_HashSecret' => $request['vnp_HashSecret'],
+                        'vnp_Url' => $request['vnp_Url'],
+                    ]),
+                    'updated_at' => now()
+                ]);
+            }
+        } 
         Toastr::success(translate('successfully_updated'));
         return back();
     }

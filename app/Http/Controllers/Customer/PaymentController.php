@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Model\Cart;
 use App\Model\ShippingType;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
@@ -24,6 +25,7 @@ class PaymentController extends Controller
         if ($validator->errors()->count() > 0) {
             return response()->json(['errors' => Helpers::error_processor($validator)]);
         }
+        Log::alert($request->all());
 
         session()->put('customer_id', $request['customer_id']);
         session()->put('order_note', $request['order_note']);

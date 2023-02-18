@@ -3,7 +3,7 @@ import 'package:james_clothes_app/data/model/response/language_model.dart';
 class AppConstants {
   static const String APP_NAME = 'James Clothes';
   static const String APP_VERSION = '12.1';
-  static const String BASE_URL = 'http://10.0.2.2/web1';
+  static const String BASE_URL = 'http://10.0.2.2/james-clothes-ecommerce';
   static const String USER_ID = 'userId';
   static const String NAME = 'name';
   static const String CATEGORIES_URI = '/api/v1/categories';

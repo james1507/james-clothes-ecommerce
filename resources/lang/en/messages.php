@@ -2374,4 +2374,6 @@
   'reschedule' => 'Reschedule',
   'Fill_all_required_fields_of_shipping/billing_address' => 'Fill all required fields of shipping/billing address',
   'All_copy_right_reserved_©_2023_' => 'All copy right reserved © 2023 ',
+  'Cart key or ID is required!' => 'Cart key or ID is required!',
+  'successfully_removed' => 'Successfully removed',
 );

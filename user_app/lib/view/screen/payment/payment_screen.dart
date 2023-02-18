@@ -8,6 +8,7 @@ import 'package:james_clothes_app/view/basewidget/custom_app_bar.dart';
 import 'package:james_clothes_app/view/basewidget/custom_loader.dart';
 import 'package:james_clothes_app/view/basewidget/my_dialog.dart';
 import 'package:james_clothes_app/view/screen/dashboard/dashboard_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -65,7 +66,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   WebView(
                     javascriptMode: JavascriptMode.unrestricted,
                     initialUrl: selectedUrl,
-                    gestureNavigationEnabled: true,
+                    // gestureNavigationEnabled: true,
                     userAgent:
                         'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13E233 Safari/601.1',
                     onWebViewCreated: (WebViewController webViewController) {
@@ -73,14 +74,16 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           .then((value) => controllerGlobal = value);
                       _controller.complete(webViewController);
                     },
-                    onPageStarted: (String url) {
+                    onPageStarted: (String url) async {
                       print('Started url: $url');
+                      // await launchUrl(Uri.parse(url));
                       if (url.contains(AppConstants.BASE_URL)) {
                         bool _isSuccess = url.contains('success');
                         bool _isFailed = url.contains('fail');
                         setState(() {
                           _isLoading = true;
                         });
+
                         if (_isSuccess) {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
@@ -135,8 +138,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         }
                       }
                     },
-                    onPageFinished: (String url) {
-                      print('Started url: $url');
+                    onPageFinished: (String url) async {
+                      print('Finished url: $url');
+                      // await launchUrl(Uri.parse(url));
                       setState(() {
                         _isLoading = false;
                       });

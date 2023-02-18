@@ -250,6 +250,7 @@ class OrderManager
         $discount = session()->has('coupon_discount') ? session('coupon_discount') : 0;
         $order_note = session()->has('order_note') ? session('order_note') : null;
 
+
         $req = array_key_exists('request', $data) ? $data['request'] : null;
         if ($req != null) {
             if (session()->has('coupon_code') == false) {
@@ -317,6 +318,8 @@ class OrderManager
             'updated_at' => now(),
             'order_note' => $order_note
         ];
+
+        // session()->put(CartManager::cart_grand_total($cart_group_id) - $discount);
 //        confirmed
         DB::table('orders')->insertGetId($or);
         self::add_order_status_history($order_id, auth('customer')->id(), $data['payment_status']=='paid'?'confirmed':'pending', 'customer');

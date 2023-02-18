@@ -258,6 +258,10 @@ Route::any('paytm-response', 'PaytmController@callback')->name('paytm-response')
 Route::get('liqpay-payment', 'LiqPayController@payment')->name('liqpay-payment');
 Route::any('liqpay-callback', 'LiqPayController@callback')->name('liqpay-callback');
 
+
+Route::post('pay-vnpay', 'VNPayController@payWithcnpay')->name('pay-vnpay');
+Route::get('returnUrl-vnpay', 'VNPayController@returnUrlVnPay')->name('returnUrl-vnpay');
+
 Route::get('/test', function (){
     $product = \App\Model\Product::find(116);
     $quantity = 6;

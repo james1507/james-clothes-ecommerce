@@ -318,7 +318,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   MediaQuery.of(context).size.width / 2.9),
                           child: Text(getTranslated('proceed', context),
                               style: titilliumSemiBold.copyWith(
-                                fontSize: Dimensions.FONT_SIZE_EXTRA_LARGE,
+                                fontSize: Dimensions.FONT_SIZE_DEFAULT,
                                 color: Theme.of(context).cardColor,
                               )),
                         ),

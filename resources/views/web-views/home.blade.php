@@ -614,7 +614,6 @@
                             @foreach($featured_products as $product)
                                 <div  style="margin:5px;margin-bottom: 30px;">
                                     @include('web-views.partials._feature-product',['product'=>$product, 'decimal_point_settings'=>$decimal_point_settings])
-
                                 </div>
                             @endforeach
                         </div>
@@ -624,7 +623,6 @@
         </div>
     </div>
     @endif
-
     {{--featured deal--}}
     @php($featured_deals=\App\Model\FlashDeal::with(['products'=>function($query_one){
         $query_one->with('product.reviews')->whereHas('product',function($query_two){
@@ -1023,7 +1021,6 @@
                                                 </div>
                                             @endif
                                         <div class="row" style="padding:8px;">
-
                                             <div class="best-selleing-image"  >
                                                 <a class="d-block d-flex justify-content-center" style="width:100%;height:100%;"
                                                     href="{{route('product',$bestSell->product->slug)}}">

@@ -226,17 +226,18 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">
-                        @php($config=\App\CPU\Helpers::get_business_settings('stripe'))
-                        <form action="{{route('admin.business-settings.payment-method.update',['stripe'])}}"
+                        @php($config=\App\CPU\Helpers::get_business_settings('vnpay'))
+                        <form action="{{route('admin.business-settings.payment-method.update',['vnpay'])}}"
                               method="post">
                             @csrf
                             @if(isset($config))
                                 @php($config['environment'] = $config['environment']??'sandbox')
                                 <div class="d-flex flex-wrap gap-2 justify-content-between mb-3">
-                                    <h5 class="text-uppercase">{{\App\CPU\translate('Stripe')}}</h5>
+                                    <h5 class="text-uppercase">VNPAY</h5>
 
                                     <label class="switcher show-status-text">
                                         <input class="switcher_input" type="checkbox"
@@ -250,26 +251,20 @@
                                 </center>
 
                                 <div class="form-group">
-                                    <label
-                                        class="d-flex title-color">{{\App\CPU\translate('choose_environment')}}</label>
-                                    <select class="js-example-responsive form-control" name="environment">
-                                        <option
-                                            value="sandbox" {{$config['environment']=='sandbox'?'selected':''}}>{{\App\CPU\translate('sandbox')}}</option>
-                                        <option
-                                            value="live" {{$config['environment']=='live'?'selected':''}}>{{\App\CPU\translate('live')}}</option>
-                                    </select>
+                                    <label class="d-flex title-color">vnp_TmnCode</label>
+                                    <input type="text" class="form-control" name="vnp_TmnCode"
+                                           value="{{env('APP_MODE')=='demo'?'':$config['vnp_TmnCode']}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="d-flex title-color">{{\App\CPU\translate('published_key')}}</label>
-                                    <input type="text" class="form-control" name="published_key"
-                                           value="{{env('APP_MODE')=='demo'?'':$config['published_key']}}">
+                                    <label class="d-flex title-color">vnp_HashSecret</label>
+                                    <input type="text" class="form-control" name="vnp_HashSecret"
+                                           value="{{env('APP_MODE')=='demo'?'':$config['vnp_HashSecret']}}">
                                 </div>
-
                                 <div class="form-group">
-                                    <label class="d-flex title-color">{{\App\CPU\translate('api_key')}}</label>
-                                    <input type="text" class="form-control" name="api_key"
-                                           value="{{env('APP_MODE')=='demo'?'':$config['api_key']}}">
+                                    <label class="d-flex title-color">vnp_Url</label>
+                                    <input type="text" class="form-control" name="vnp_Url"
+                                           value="{{env('APP_MODE')=='demo'?'':$config['vnp_Url']}}">
                                 </div>
                                 <div class="mt-3 d-flex flex-wrap justify-content-end gap-10">
                                     <button type="{{env('APP_MODE')!='demo'?'submit':'button'}}"
