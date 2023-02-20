@@ -574,14 +574,14 @@
     <script>
         function initAutocompleteBilling() {
             var myLatLng = {
-                lat: {{$default_location?$default_location['lat']:'-33.8688'}},
-                lng: {{$default_location?$default_location['lng']:'151.2195'}}
+                lat: {{$default_location?$default_location['lat']:'20.98123849084675'}},
+                lng: {{$default_location?$default_location['lng']:'105.78958891534461'}}
             };
 
             const map = new google.maps.Map(document.getElementById("location_map_canvas_billing"), {
                 center: {
-                    lat: {{$default_location?$default_location['lat']:'-33.8688'}},
-                    lng: {{$default_location?$default_location['lng']:'151.2195'}}
+                    lat: {{$default_location?$default_location['lat']:'20.98123849084675'}},
+                    lng: {{$default_location?$default_location['lng']:'105.78958891534461'}}
                 },
                 zoom: 13,
                 mapTypeId: "roadmap",

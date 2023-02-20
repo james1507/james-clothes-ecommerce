@@ -5,14 +5,14 @@ import 'package:provider/provider.dart';
 class ColorResources {
   static Color getColombiaBlue(BuildContext context) {
     return Provider.of<ThemeProvider>(context).darkTheme
-        ? Color(0xFF678cb5)
-        : Color(0xFF92C6FF);
+        ? Color(0xFF1b5943)
+        : Color(0xFF1b5943);
   }
 
   static Color getLightSkyBlue(BuildContext context) {
     return Provider.of<ThemeProvider>(context).darkTheme
         ? Color(0xFFc7c7c7)
-        : Color(0xFF8DBFF6);
+        : Color(0xFF1b5943);
   }
 
   static Color getHarlequin(BuildContext context) {
@@ -90,7 +90,7 @@ class ColorResources {
   static Color getSellerTxt(BuildContext context) {
     return Provider.of<ThemeProvider>(context).darkTheme
         ? Color(0xFF517091)
-        : Color(0xFF92C6FF);
+        : Color(0xFF23CB60);
   }
 
   static Color getChatIcon(BuildContext context) {
@@ -113,8 +113,8 @@ class ColorResources {
 
   static Color getFloatingBtn(BuildContext context) {
     return Provider.of<ThemeProvider>(context).darkTheme
-        ? Color(0xFF49698c)
-        : Color(0xFF7DB6F5);
+        ? Color(0xFF1b5943)
+        : Color(0xFF23CB60);
   }
 
   static Color getPrimary(BuildContext context) {
@@ -161,7 +161,7 @@ class ColorResources {
 
   static const Color BLACK = Color(0xff000000);
   static const Color WHITE = Color(0xffFFFFFF);
-  static const Color LIGHT_SKY_BLUE = Color(0xff8DBFF6);
+  static const Color LIGHT_SKY_BLUE = Color(0xff1b5943);
   static const Color HARLEQUIN = Color(0xff3FCC01);
   static const Color CERISE = Color(0xffE2206B);
   static const Color GREY = Color(0xffF1F1F1);
@@ -173,7 +173,7 @@ class ColorResources {
   static const Color ICON_BG = Color(0xffF9F9F9);
   static const Color HOME_BG = Color(0xffF0F0F0);
   static const Color IMAGE_BG = Color(0xffE2F0FF);
-  static const Color SELLER_TXT = Color(0xff92C6FF);
+  static const Color SELLER_TXT = Color(0xff1b5943);
   static const Color CHAT_ICON_COLOR = Color(0xffD4D4D4);
   static const Color LOW_GREEN = Color(0xffEFF6FE);
   static const Color GREEN = Color(0xff23CB60);

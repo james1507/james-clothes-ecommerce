@@ -167,7 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 500,
                   color: Provider.of<ThemeProvider>(context).darkTheme
                       ? Colors.black
-                      : null,
+                      : Color(0xFF1b5943),
                 ),
               ),
               Container(
