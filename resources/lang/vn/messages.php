@@ -2374,4 +2374,5 @@
   'All_copy_right_reserved_©_2023_' => 'Tất Cả Bản Quyền Được Bảo Lưu © 2023 ',
   'Cart key or ID is required!' => 'Cart key or ID is required!',
   'successfully_removed' => 'Successfully removed',
+  'vnpay' => 'VNPAY',
 );
