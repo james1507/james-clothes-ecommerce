@@ -377,7 +377,7 @@
                             </a>
                         </li>
 
-                        @php( $shipping_method = \App\CPU\Helpers::get_business_settings('shipping_method'))
+                        {{-- @php( $shipping_method = \App\CPU\Helpers::get_business_settings('shipping_method'))
                         @if($shipping_method=='sellerwise_shipping')
                             <li class="nav-item {{Request::is('seller/delivery-man*')?'scroll-here':''}}">
                                 <small class="nav-subtitle">{{\App\CPU\translate('delivery_man_management')}}</small>
@@ -422,7 +422,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        @endif
+                        @endif --}}
                     </ul>
                 </div>
                 <!-- End Content -->

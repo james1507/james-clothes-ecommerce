@@ -80,41 +80,6 @@
                     </div>
                 </div>
             </div>
-            @php($seller_pos=\App\Model\BusinessSetting::where('type','seller_pos')->first()->value)
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <h5 class="mb-0">{{\App\CPU\translate('Seller POS')}}</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <form action="{{route('admin.business-settings.seller-settings.seller-pos-settings')}}"
-                              method="post">
-                            @csrf
-                            <label class="title-color d-flex mb-3">{{\App\CPU\translate('Seller POS permission on/off')}}</label>
-                            <div class="d-flex flex-column">
-                                <div class="d-flex gap-2 align-items-center mb-2">
-                                    <input name="seller_pos" type="radio" value="1"
-                                        id="seller_pos1" {{$seller_pos==1?'checked':''}}>
-                                    <label class="title-color mb-0" for="seller_pos1">
-                                        {{\App\CPU\translate('Turn on')}}
-                                    </label>
-                                </div>
-                                <div class="d-flex gap-2 align-items-center">
-                                    <input name="seller_pos" type="radio" value="0"
-                                        id="seller_pos2" {{$seller_pos==0?'checked':''}}>
-                                    <label class="title-color mb-0" for="seller_pos2">
-                                        {{\App\CPU\translate('Turn off')}}
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mt-3 d-flex flex-wrap justify-content-end gap-10">
-                                <button type="submit" class="btn btn--primary px-4">{{\App\CPU\translate('Save')}}</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-header">

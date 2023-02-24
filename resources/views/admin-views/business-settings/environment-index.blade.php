@@ -130,7 +130,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label class="title-color d-flex">{{\App\CPU\translate('BUYER_USERNAME')}}</label>
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="d-flex align-items-center justify-content-end flex-wrap gap-10">
                             <button type="{{env('APP_MODE')!='demo'?'submit':'button'}}"
                                 onclick="{{env('APP_MODE')!='demo'?'':'call_demo()'}}"

@@ -232,7 +232,7 @@
                             {{ csrf_field() }}
                             <button class="btn btn-block click-if-alone" type="submit">
                                 <img width="150"
-                                     src="{{asset('public/assets/front-end/img/paypal.png')}}"/>
+                                     src="{{asset('public/assets/front-end/img/vnpay.jpg')}}"/>
                             </button>
                         </form>
                     </div>

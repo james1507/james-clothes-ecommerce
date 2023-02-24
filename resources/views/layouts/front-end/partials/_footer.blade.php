@@ -221,42 +221,11 @@
                                 </ul>
                             @endif
                         </div>
-                        <div class="col-md-5 footer-padding-bottom" >
-                                @php($ios = \App\CPU\Helpers::get_business_settings('download_app_apple_stroe'))
-                                @php($android = \App\CPU\Helpers::get_business_settings('download_app_google_stroe'))
-            
-                                @if($ios['status'] || $android['status'])
-                                    <div class="d-flex justify-content-center">
-                                        <h6 class="text-uppercase font-weight-bold footer-heder align-items-center">
-                                            {{\App\CPU\translate('download_our_app')}}
-                                        </h6>
-                                    </div>
-                                @endif
-            
-            
-                                <div class="store-contents d-flex justify-content-center" >
-                                    @if($ios['status'])
-                                        <div class="{{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}} mb-2">
-                                            <a class="" href="{{ $ios['link'] }}" role="button"><img
-                                                    src="{{asset("public/assets/front-end/png/apple_app.png")}}"
-                                                    alt="" style="height: 51px!important;">
-                                            </a>
-                                        </div>
-                                    @endif
-            
-                                    @if($android['status'])
-                                        <div class="{{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}} mb-2">
-                                            <a href="{{ $android['link'] }}" role="button">
-                                                <img src="{{asset("public/assets/front-end/png/google_app.png")}}"
-                                                     alt="" style="height: 51px!important;">
-                                            </a>
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="text-nowrap mb-2">
-                                    <span style="font-weight: 700;font-size: 14.3208px;">{{\App\CPU\translate('NEWS LETTER')}}</span><br>
-                                    <span style="font-weight: 400;font-size: 11.066px;">{{\App\CPU\translate('subscribe to our new channel to get latest updates')}}</span>
-                                </div>
+                        <div class="col-md-4 footer-padding-bottom" >
+                            <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">
+                                    {{\App\CPU\translate('NEWS LETTER')}}
+                            </h6>
+                            <span style="font-weight: 400;font-size: 11.066px;">{{\App\CPU\translate('subscribe to our new channel to get latest updates')}}</span>
                                 <div class="text-nowrap mb-4" style="position:relative;">
                                     <form action="{{ route('subscription') }}" method="post">
                                         @csrf
