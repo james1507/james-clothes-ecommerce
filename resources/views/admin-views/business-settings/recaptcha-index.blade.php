@@ -71,7 +71,7 @@
                                     <li>{{\App\CPU\translate('Add a Label (Ex: abc company)')}}</li>
                                     <li>{{\App\CPU\translate('Select reCAPTCHA v2  as  ReCAPTCHA Type')}}</li>
                                     <li>{{\App\CPU\translate('Select Sub type: Im not a robot Checkbox ')}}</li>
-                                    <li>{{\App\CPU\translate('Add Domain (For ex: demo.6amtech.com)')}}</li>
+                                    <li>{{\App\CPU\translate('Add Domain (For ex: demo.james.com)')}}</li>
                                     <li>{{\App\CPU\translate('Check in “Accept the reCAPTCHA Terms of Service”')}}</li>
                                     <li>{{\App\CPU\translate('Press Submit')}}</li>
                                     <li>{{\App\CPU\translate('Copy Site Key and Secret Key, Paste in the input filed below and Save.')}}</li>

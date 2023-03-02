@@ -1447,7 +1447,7 @@
   'reCAPTCHA Type' => 'ReCAPTCHA Type',
   'Sub type: I\'m not a robot Checkbox' => 'Sub type: I m not a robot Checkbox',
   'domain' => 'Domain',
-  '(For ex: demo.6amtech.com)' => '(For ex: demo.6amtech.com)',
+  '(For ex: demo.james.com)' => '(For ex: demo.james.com)',
   'Check in ' => 'Check in ',
   'Accept the reCAPTCHA Terms of Service' => 'Accept the reCAPTCHA Terms of Service',
   'Press' => 'Press',
