@@ -65,10 +65,10 @@
                         @endif --}}
                         <!-- End POS -->
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <small class="nav-subtitle">{{\App\CPU\translate('order_management')}}</small>
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
-                        </li>
+                        </li> --}}
 
                         <!-- Pages -->
                         <li class="navbar-vertical-aside-has-menu {{Request::is('seller/orders*')?'active':''}}">
@@ -110,7 +110,7 @@
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('confirmed')}}
                                             <span
-                                                class="badge badge-soft-info badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                                class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'confirmed'])->count()}}
                                             </span>
                                         </span>
@@ -122,7 +122,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('Packaging')}}
-                                            <span class="badge badge-soft-warning badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                            <span class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'processing'])->count()}}
                                             </span>
                                         </span>
@@ -135,7 +135,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('Out_For_Delivery')}}
-                                            <span class="badge badge-soft-warning badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                            <span class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'out_for_delivery'])->count()}}
                                             </span>
                                         </span>
@@ -147,7 +147,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('Delivered')}}
-                                            <span class="badge badge-soft-success badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                            <span class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'delivered'])->count()}}
                                             </span>
                                         </span>
@@ -158,7 +158,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('Returned')}}
-                                            <span class="badge badge-soft-danger badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                            <span class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'returned'])->count()}}
                                             </span>
                                         </span>
@@ -169,7 +169,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('Failed To Deliver')}}
-                                            <span class="badge badge-soft-danger badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                            <span class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'failed'])->count()}}
                                             </span>
                                         </span>
@@ -180,7 +180,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                             {{\App\CPU\translate('canceled')}}
-                                            <span class="badge badge-soft-danger badge-pill {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
+                                            <span class="badge badge-soft-info badge-pill ml-1 {{Session::get('direction') === "rtl" ? 'mr-1' : 'ml-1'}}">
                                                 {{ \App\Model\Order::where(['seller_is'=>'seller'])->where(['seller_id'=>$sellerId])->where(['order_status'=>'canceled'])->count()}}
                                             </span>
                                         </span>
@@ -205,7 +205,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                           {{\App\CPU\translate('pending')}}
-                                            <span class="badge badge-soft-danger badge-pill ml-1">
+                                            <span class="badge badge-soft-info badge-pill ml-1">
                                                 {{\App\Model\RefundRequest::whereHas('order', function ($query) {
                                                     $query->where('seller_is', 'seller')->where('seller_id',auth('seller')->id());
                                                         })->where('status','pending')->count()}}
@@ -234,7 +234,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                            {{\App\CPU\translate('refunded')}}
-                                            <span class="badge badge-soft-success badge-pill ml-1">
+                                            <span class="badge badge-soft-info badge-pill ml-1">
                                                 {{\App\Model\RefundRequest::whereHas('order', function ($query) {
                                                     $query->where('seller_is', 'seller')->where('seller_id',auth('seller')->id());
                                                         })->where('status','refunded')->count()}}
@@ -248,7 +248,7 @@
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">
                                            {{\App\CPU\translate('rejected')}}
-                                            <span class="badge badge-danger badge-pill ml-1">
+                                            <span class="badge badge-soft-info badge-pill ml-1">
                                                 {{\App\Model\RefundRequest::whereHas('order', function ($query) {
                                                     $query->where('seller_is', 'seller')->where('seller_id',auth('seller')->id());
                                                         })->where('status','rejected')->count()}}
@@ -261,7 +261,7 @@
                         <!-- End Pages -->
 
                         <li class="nav-item">
-                            <small class="nav-subtitle">{{\App\CPU\translate('product_management')}}</small>
+                            {{-- <small class="nav-subtitle">{{\App\CPU\translate('product_management')}}</small> --}}
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
 
@@ -281,12 +281,12 @@
                                     </a>
                                 </li>
 
-                                <li class="nav-item {{Request::is('seller/product/bulk-import')?'active':''}}">
+                                {{-- <li class="nav-item {{Request::is('seller/product/bulk-import')?'active':''}}">
                                     <a class="nav-link " href="{{route('seller.product.bulk-import')}}">
                                         <span class="tio-circle nav-indicator-icon"></span>
                                         <span class="text-truncate">{{\App\CPU\translate('bulk_import')}}</span>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
 
@@ -301,7 +301,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <small class="nav-subtitle">{{\App\CPU\translate('Help_&_Support_Section')}}</small>
+                            {{-- <small class="nav-subtitle">{{\App\CPU\translate('Help_&_Support_Section')}}</small> --}}
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
 
@@ -328,7 +328,7 @@
 
                         <!-- End Pages -->
                         <li class="nav-item {{( Request::is('seller/business-settings*'))?'scroll-here':''}}">
-                            <small class="nav-subtitle" title="">{{\App\CPU\translate('business_section')}}</small>
+                            {{-- <small class="nav-subtitle" title="">{{\App\CPU\translate('business_section')}}</small> --}}
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
                         @php($shippingMethod = \App\CPU\Helpers::get_business_settings('shipping_method'))

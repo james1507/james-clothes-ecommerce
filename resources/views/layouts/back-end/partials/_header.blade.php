@@ -176,11 +176,25 @@
 
                                 <a class="dropdown-item"
                                    href="{{route('admin.profile.update',auth('admin')->user()->id)}}">
-                                    <span class="text-truncate pr-2" title="Settings">Settings</span>
+                                    <span class="text-truncate pr-2" title="Settings">Edit Admin</span>
                                 </a>
+                                @if(\App\CPU\Helpers::module_permission_check('system_settings'))
+                                <a class="dropdown-item"
+                                   href="{{route('admin.business-settings.web-config.index')}}">
+                                    <span class="text-truncate pr-2" title="{{\App\CPU\translate('Business_Setup')}}">{{\App\CPU\translate('Business_Setup')}}</span>
+                                </a>
+                                <a class="dropdown-item"
+                                   href="{{route('admin.business-settings.sms-module')}}">
+                                    <span class="text-truncate pr-2" title="{{\App\CPU\translate('3rd_party')}}">{{\App\CPU\translate('3rd_party')}}</span>
+                                </a>
+                                <a class="dropdown-item"
+                                   href="{{route('admin.business-settings.web-config.environment-setup')}}">
+                                    <span class="text-truncate pr-2" title="{{\App\CPU\translate('System_Setup')}}">{{\App\CPU\translate('System_Setup')}}</span>
+                                </a>
+                                @endif
 
                                 <div class="dropdown-divider"></div>
-
+                                
                                 <a class="dropdown-item" href="javascript:" onclick="Swal.fire({
                                     title: 'Do you want to logout?',
                                     showDenyButton: true,

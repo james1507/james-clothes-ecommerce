@@ -98,11 +98,6 @@
                                 <input type="file" name="digital_file_ready" id="digital_file_ready" class="form-control">
                                 <div class="mt-1 text-info">File type: jpg, jpeg, png, gif, zip, pdf</div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
                             <div class="col-md-4">
                                 <label for="name" class="title-color">{{ \App\CPU\translate('Category') }}</label>
                                 <select class="js-example-basic-multiple form-control" name="category_id"
@@ -119,24 +114,6 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="name" class="title-color">{{ \App\CPU\translate('Sub Category') }}</label>
-                                <select class="js-example-basic-multiple form-control" name="sub_category_id"
-                                    id="sub-category-select"
-                                    onchange="getRequest('{{ url('/') }}/admin/product/get-categories?parent_id='+this.value,'sub-sub-category-select','select')">
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                    <label for="name" class="title-color">{{ \App\CPU\translate('Sub Sub Category') }}</label>
-                                    <select class="js-example-basic-multiple form-control" name="sub_sub_category_id"
-                                        id="sub-sub-category-select">
-
-                                    </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="title-color"
                                         for="exampleFormControlInput1">{{ \App\CPU\translate('product_code_sku') }}
@@ -149,6 +126,44 @@
                                         placeholder="{{ \App\CPU\translate('code') }}" required>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    {{-- <div class="form-group"> --}}
+                        {{-- <div class="row">
+                            <div class="col-md-4">
+                                <label for="name" class="title-color">{{ \App\CPU\translate('Category') }}</label>
+                                <select class="js-example-basic-multiple form-control" name="category_id"
+                                    onchange="getRequest('{{ url('/') }}/admin/product/get-categories?parent_id='+this.value,'sub-category-select','select')"
+                                    required>
+                                    <option value="{{ old('category_id') }}" selected disabled>---Select---
+                                    </option>
+                                    @foreach ($cat as $c)
+                                        <option value="{{ $c['id'] }}"
+                                            {{ old('name') == $c['id'] ? 'selected' : '' }}>
+                                            {{ $c['name'] }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div> --}}
+                            {{-- <div class="col-md-4">
+                                <label for="name" class="title-color">{{ \App\CPU\translate('Sub Category') }}</label>
+                                <select class="js-example-basic-multiple form-control" name="sub_category_id"
+                                    id="sub-category-select"
+                                    onchange="getRequest('{{ url('/') }}/admin/product/get-categories?parent_id='+this.value,'sub-sub-category-select','select')">
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                    <label for="name" class="title-color">{{ \App\CPU\translate('Sub Sub Category') }}</label>
+                                    <select class="js-example-basic-multiple form-control" name="sub_sub_category_id"
+                                        id="sub-sub-category-select">
+
+                                    </select>
+                            </div> --}}
+                        {{-- </div>
+                    </div> --}}
+                    <div class="form-group">
+                        <div class="row">
                             @if($brand_setting)
                             <div class="col-md-4">
                                 <label for="name" class="title-color">{{ \App\CPU\translate('Brand') }}</label>

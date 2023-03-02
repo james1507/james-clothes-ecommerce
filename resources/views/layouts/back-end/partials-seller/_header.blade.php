@@ -235,6 +235,14 @@
                                           title="Settings">{{\App\CPU\translate('Settings')}}</span>
                                 </a>
 
+                                <a class="dropdown-item"
+                                   href="{{route('seller.profile.update',auth('seller')->user()->id)}}">
+                                    <span class="text-truncate pr-2"
+                                          title="Settings">{{\App\CPU\translate('Settings')}}</span>
+                                </a>
+
+                                
+
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item" href="javascript:" onclick="Swal.fire({

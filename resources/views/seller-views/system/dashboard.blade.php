@@ -113,7 +113,7 @@
             </div>
         </div>
 
-        <div class="row g-2">
+        {{-- <div class="row g-2">
             <div class="col-lg-12">
                 <!-- Card -->
                 <div class="card h-100">
@@ -276,7 +276,7 @@
                 <!-- End Card -->
             </div>
         </div>
-    </div>
+    </div> --}}
 
 @endsection
 

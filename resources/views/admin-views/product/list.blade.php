@@ -58,9 +58,9 @@
                                     <div class="dropdown-divider"></div>
                                 </ul>
                             </div>
-                            <a href="{{route('admin.product.stock-limit-list',['in_house'])}}" class="btn btn-info">
+                            {{-- <a href="{{route('admin.product.stock-limit-list',['in_house'])}}" class="btn btn-info">
                                 <span class="text">{{\App\CPU\translate('Limited Sotcks')}}</span>
-                            </a>
+                            </a> --}}
                             @endif
                             @if (!isset($request_status))
                                 <a href="{{route('admin.product.add-new')}}" class="btn btn--primary">

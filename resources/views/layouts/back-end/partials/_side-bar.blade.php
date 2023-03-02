@@ -77,7 +77,7 @@
                         <!-- Order Management -->
                         @if(\App\CPU\Helpers::module_permission_check('order_management'))
                             <li class="nav-item {{Request::is('admin/orders*')?'scroll-here':''}}">
-                                <small class="nav-subtitle" title="">{{\App\CPU\translate('order_management')}}</small>
+                                {{-- <small class="nav-subtitle" title="">{{\App\CPU\translate('order_management')}}</small> --}}
                                 <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                             </li>
                             <!-- Order -->
@@ -121,7 +121,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                                 {{\App\CPU\translate('confirmed')}}
-                                                <span class="badge badge-soft-success badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where(['order_status'=>'confirmed'])->count()}}
                                                 </span>
                                             </span>
@@ -133,7 +133,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                             {{\App\CPU\translate('Packaging')}}
-                                                <span class="badge badge-soft-warning badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where(['order_status'=>'processing'])->count()}}
                                                 </span>
                                         </span>
@@ -145,7 +145,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                             {{\App\CPU\translate('out_for_delivery')}}
-                                                <span class="badge badge-soft-warning badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where(['order_status'=>'out_for_delivery'])->count()}}
                                                 </span>
                                         </span>
@@ -157,7 +157,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                             {{\App\CPU\translate('delivered')}}
-                                                <span class="badge badge-soft-success badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where(['order_status'=>'delivered'])->count()}}
                                                 </span>
                                             </span>
@@ -169,7 +169,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                                 {{\App\CPU\translate('returned')}}
-                                                    <span class="badge badge-soft-danger badge-pill ml-1">
+                                                    <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where('order_status','returned')->count()}}
                                                 </span>
                                             </span>
@@ -181,7 +181,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                                 {{\App\CPU\translate('Failed_to_Deliver')}}
-                                                <span class="badge badge-soft-danger badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where(['order_status'=>'failed'])->count()}}
                                                 </span>
                                             </span>
@@ -194,7 +194,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                                 {{\App\CPU\translate('canceled')}}
-                                                    <span class="badge badge-soft-danger badge-pill ml-1">
+                                                    <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\Order::where(['order_status'=>'canceled'])->count()}}
                                                 </span>
                                             </span>
@@ -220,7 +220,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                               {{\App\CPU\translate('pending')}}
-                                                <span class="badge badge-soft-danger badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\RefundRequest::where('status','pending')->count()}}
                                                 </span>
                                             </span>
@@ -247,7 +247,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                                {{\App\CPU\translate('refunded')}}
-                                                <span class="badge badge-soft-success badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\RefundRequest::where('status','refunded')->count()}}
                                                 </span>
                                             </span>
@@ -260,7 +260,7 @@
                                             <span class="tio-circle nav-indicator-icon"></span>
                                             <span class="text-truncate">
                                                {{\App\CPU\translate('rejected')}}
-                                                <span class="badge badge-soft-danger badge-pill ml-1">
+                                                <span class="badge badge-soft-info badge-pill ml-1">
                                                     {{\App\Model\RefundRequest::where('status','rejected')->count()}}
                                                 </span>
                                             </span>
@@ -274,8 +274,8 @@
                         <!--Product Management -->
                         @if(\App\CPU\Helpers::module_permission_check('product_management'))
                             <li class="nav-item {{(Request::is('admin/brand*') || Request::is('admin/category*') || Request::is('admin/sub*') || Request::is('admin/attribute*') || Request::is('admin/product*'))?'scroll-here':''}}">
-                                <small class="nav-subtitle"
-                                       title="">{{\App\CPU\translate('product_management')}}</small>
+                                {{-- <small class="nav-subtitle" --}}
+                                       {{-- title="">{{\App\CPU\translate('product_management')}}</small> --}}
                                 <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                             </li>
                             <!-- Pages -->
@@ -296,7 +296,7 @@
                                             <span class="text-truncate">{{\App\CPU\translate('Categories')}}</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item {{Request::is('admin/sub-category/view')?'active':''}}">
+                                    {{-- <li class="nav-item {{Request::is('admin/sub-category/view')?'active':''}}">
                                         <a class="nav-link " href="{{route('admin.sub-category.view')}}"
                                            title="{{\App\CPU\translate('Sub_Categories')}}">
                                             <span class="tio-circle nav-indicator-icon"></span>
@@ -310,7 +310,7 @@
                                             <span
                                                 class="text-truncate">{{\App\CPU\translate('Sub_Sub_Categories')}}</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
                             <li class="navbar-vertical-aside-has-menu {{Request::is('admin/brand*')?'active':''}}">
@@ -430,7 +430,7 @@
                         @if(\App\CPU\Helpers::module_permission_check('promotion_management'))
                         <!--promotion management start-->
                         <li class="nav-item {{(Request::is('admin/banner*') || (Request::is('admin/coupon*')) || (Request::is('admin/notification*')) || (Request::is('admin/deal*')))?'scroll-here':''}}">
-                            <small class="nav-subtitle" title="">{{\App\CPU\translate('promotion_management')}}</small>
+                            {{-- <small class="nav-subtitle" title="">{{\App\CPU\translate('promotion_management')}}</small> --}}
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
                         <li class="navbar-vertical-aside-has-menu {{Request::is('admin/banner*')?'active':''}}">
@@ -500,7 +500,7 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="navbar-vertical-aside-has-menu {{Request::is('admin/business-settings/announcement')?'active':''}}">
+                        {{-- <li class="navbar-vertical-aside-has-menu {{Request::is('admin/business-settings/announcement')?'active':''}}">
                             <a class="js-navbar-vertical-aside-menu-link nav-link"
                                href="{{route('admin.business-settings.announcement')}}"
                                title="{{\App\CPU\translate('announcement')}}">
@@ -509,15 +509,15 @@
                                     {{\App\CPU\translate('announcement')}}
                                 </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <!--promotion management end-->
                         @endif
 
                         <!-- end refund section -->
                         @if(\App\CPU\Helpers::module_permission_check('support_section'))
                         <li class="nav-item {{(Request::is('admin/support-ticket*') || Request::is('admin/contact*'))?'scroll-here':''}}">
-                            <small class="nav-subtitle"
-                                   title="">{{\App\CPU\translate('help_&_support_section')}}</small>
+                            {{-- <small class="nav-subtitle"
+                                   title="">{{\App\CPU\translate('help_&_support_section')}}</small> --}}
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
 
@@ -676,7 +676,7 @@
                         <!--User management-->
                         @if(\App\CPU\Helpers::module_permission_check('user_section'))
                         <li class="nav-item {{(Request::is('admin/customer/list') ||Request::is('admin/sellers/subscriber-list')||Request::is('admin/sellers/seller-add') || Request::is('admin/sellers/seller-list') || Request::is('admin/delivery-man*'))?'scroll-here':''}}">
-                            <small class="nav-subtitle" title="">{{\App\CPU\translate('user_management')}}</small>
+                            {{-- <small class="nav-subtitle" title="">{{\App\CPU\translate('user_management')}}</small> --}}
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
 
@@ -706,7 +706,7 @@
                                 </span>
                                     </a>
                                 </li>
-                                <li class="nav-item {{Request::is('admin/customer/wallet/report')?'active':''}}">
+                                {{-- <li class="nav-item {{Request::is('admin/customer/wallet/report')?'active':''}}">
                                     <a class="nav-link" title="{{\App\CPU\translate('wallet')}}"
                                        href="{{route('admin.customer.wallet.report')}}">
                                         <span class="tio-circle nav-indicator-icon"></span>
@@ -714,7 +714,7 @@
                                         {{\App\CPU\translate('wallet')}}
                                     </span>
                                     </a>
-                                </li>
+                                </li> --}}
                                 {{-- <li class="nav-item {{Request::is('admin/customer/loyalty/report')?'active':''}}">
                                     <a class="nav-link" title="{{\App\CPU\translate('Loyalty_Points')}}"
                                        href="{{route('admin.customer.loyalty.report')}}">
@@ -763,13 +763,13 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item {{Request::is('admin/customer/subscriber-list')?'active':''}}">
+                        {{-- <li class="nav-item {{Request::is('admin/customer/subscriber-list')?'active':''}}">
                             <a class="nav-link " href="{{route('admin.customer.subscriber-list')}}"
                                title="{{\App\CPU\translate('subscribers')}}">
                                 <span class="tio-user nav-icon"></span>
                                 <span class="text-truncate">{{\App\CPU\translate('subscribers')}} </span>
                             </a>
-                        </li>
+                        </li> --}}
 
                         {{-- <li class="navbar-vertical-aside-has-menu {{Request::is('admin/delivery-man*')?'active':''}}">
                             <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
@@ -853,13 +853,13 @@
 
                         <!--System Settings-->
                         @if(\App\CPU\Helpers::module_permission_check('system_settings'))
-                        <li class="nav-item {{(Request::is('admin/business-settings/social-media') || Request::is('admin/business-settings/web-config/app-settings') || Request::is('admin/business-settings/terms-condition') || Request::is('admin/business-settings/privacy-policy') || Request::is('admin/business-settings/about-us') || Request::is('admin/helpTopic/list') || Request::is('admin/business-settings/fcm-index') || Request::is('admin/business-settings/mail')|| Request::is('admin/business-settings/web-config/db-index')||Request::is('admin/business-settings/web-config/environment-setup') || Request::is('admin/business-settings/web-config'))?'scroll-here':''}}">
+                        {{-- <li class="nav-item {{(Request::is('admin/business-settings/social-media') || Request::is('admin/business-settings/web-config/app-settings') || Request::is('admin/business-settings/terms-condition') || Request::is('admin/business-settings/privacy-policy') || Request::is('admin/business-settings/about-us') || Request::is('admin/helpTopic/list') || Request::is('admin/business-settings/fcm-index') || Request::is('admin/business-settings/mail')|| Request::is('admin/business-settings/web-config/db-index')||Request::is('admin/business-settings/web-config/environment-setup') || Request::is('admin/business-settings/web-config'))?'scroll-here':''}}">
                             <small class="nav-subtitle"
                                    title="">{{\App\CPU\translate('System_Settings')}}</small>
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
-                        </li>
+                        </li> --}}
 
-                        <li class="navbar-vertical-aside-has-menu {{(Request::is('admin/business-settings/web-config') || Request::is('admin/business-settings/web-config/app-settings') || Request::is('admin/product-settings/inhouse-shop') || Request::is('admin/business-settings/seller-settings') || Request::is('admin/customer/customer-settings') || Request::is('admin/refund-section/refund-index') || Request::is('admin/business-settings/shipping-method/setting') || Request::is('admin/business-settings/order-settings/index') || Request::is('admin/product-settings') || Request::is('admin/business-settings/web-config/delivery-restriction'))?'active':''}}">
+                        {{-- <li class="navbar-vertical-aside-has-menu {{(Request::is('admin/business-settings/web-config') || Request::is('admin/business-settings/web-config/app-settings') || Request::is('admin/product-settings/inhouse-shop') || Request::is('admin/business-settings/seller-settings') || Request::is('admin/customer/customer-settings') || Request::is('admin/refund-section/refund-index') || Request::is('admin/business-settings/shipping-method/setting') || Request::is('admin/business-settings/order-settings/index') || Request::is('admin/product-settings') || Request::is('admin/business-settings/web-config/delivery-restriction'))?'active':''}}">
                             <a class="js-navbar-vertical-aside-menu-link nav-link"
                                href="{{route('admin.business-settings.web-config.index')}}"
                                title="{{\App\CPU\translate('Business_Setup')}}">
@@ -868,15 +868,15 @@
                                 {{\App\CPU\translate('Business_Setup')}}
                             </span>
                             </a>
-                        </li>
+                        </li> --}}
 
-                        <li class="navbar-vertical-aside-has-menu {{(Request::is('admin/business-settings/mail') || Request::is('admin/business-settings/sms-module') || Request::is('admin/business-settings/captcha') || Request::is('admin/social-login/view') || Request::is('admin/business-settings/map-api') || Request::is('admin/business-settings/payment-method') || Request::is('admin/business-settings/fcm-index'))?'active':''}}">
+                        {{-- <li class="navbar-vertical-aside-has-menu {{(Request::is('admin/business-settings/mail') || Request::is('admin/business-settings/sms-module') || Request::is('admin/business-settings/captcha') || Request::is('admin/social-login/view') || Request::is('admin/business-settings/map-api') || Request::is('admin/business-settings/payment-method') || Request::is('admin/business-settings/fcm-index'))?'active':''}}">
                             <a class="nav-link " href="{{route('admin.business-settings.sms-module')}}"
                                title="{{\App\CPU\translate('3rd_party')}}">
                                 <span class="tio-key nav-icon"></span>
                                 <span class="text-truncate">{{\App\CPU\translate('3rd_party')}}</span>
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="navbar-vertical-aside-has-menu {{Request::is('admin/business-settings/terms-condition') || Request::is('admin/business-settings/privacy-policy') || Request::is('admin/business-settings/about-us') || Request::is('admin/helpTopic/list') || Request::is('admin/business-settings/social-media') || Request::is('admin/file-manager*')?'active':''}}">
                             <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
@@ -921,7 +921,7 @@
                             </ul>
                         </li>
 
-                        <li class="navbar-vertical-aside-has-menu {{(Request::is('admin/business-settings/web-config/environment-setup') || Request::is('admin/business-settings/web-config/mysitemap') || Request::is('admin/business-settings/analytics-index') || Request::is('admin/currency/view') || Request::is('admin/business-settings/web-config/db-index') || Request::is('admin/business-settings/language*'))?'active':''}}">
+                        {{-- <li class="navbar-vertical-aside-has-menu {{(Request::is('admin/business-settings/web-config/environment-setup') || Request::is('admin/business-settings/web-config/mysitemap') || Request::is('admin/business-settings/analytics-index') || Request::is('admin/currency/view') || Request::is('admin/business-settings/web-config/db-index') || Request::is('admin/business-settings/language*'))?'active':''}}">
                             <a class="js-navbar-vertical-aside-menu-link nav-link"
                                title="{{\App\CPU\translate('System_Setup')}}"
                                href="{{route('admin.business-settings.web-config.environment-setup')}}">
@@ -930,7 +930,7 @@
                                 {{\App\CPU\translate('System_Setup')}}
                             </span>
                             </a>
-                        </li>
+                        </li> --}}
                         @endif
                         <!--System Settings end-->
 

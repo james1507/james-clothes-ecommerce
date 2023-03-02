@@ -52,10 +52,10 @@
                                         <div class="dropdown-divider"></div>
                                     </ul>
                                 </div>
-                                <a href="{{route('seller.product.stock-limit-list',['in_house', ''])}}" class="btn btn-info">
+                                {{-- <a href="{{route('seller.product.stock-limit-list',['in_house', ''])}}" class="btn btn-info">
                                     <i class="tio-add-circle"></i>
                                     <span class="text">{{\App\CPU\translate('Limited_Stocks')}}</span>
-                                </a>
+                                </a> --}}
                                 <a href="{{route('seller.product.add-new')}}" class="btn btn--primary">
                                     <i class="tio-add"></i>
                                     <span class="text">{{\App\CPU\translate('Add new product')}}</span>

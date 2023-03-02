@@ -2376,4 +2376,5 @@
   'All_copy_right_reserved_©_2023_' => 'All copy right reserved © 2023 ',
   'Cart key or ID is required!' => 'Cart key or ID is required!',
   'successfully_removed' => 'Successfully removed',
+  'vnpay' => 'Vnpay',
 );

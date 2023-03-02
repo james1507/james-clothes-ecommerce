@@ -20,6 +20,31 @@ class VNPayController extends Controller
     public function payWithcnpay(Request $request)
     {
         try {
+            $coupon_dis=0;
+            $total_vnp_amount = 0;
+            $sub_total=0;
+            $total_tax=0;
+            $total_shipping_cost=0;
+            $total_discount_on_product=0;
+            $cart=\App\CPU\CartManager::get_cart();
+            $shipping_cost=\App\CPU\CartManager::get_shipping_cost();
+            if(session()->has('coupon_discount')) {
+                $coupon_dis=session('coupon_discount');
+            }
+
+            if($cart->count() > 0) {
+                foreach($cart as $key => $cartItem) {
+                    $sub_total+=$cartItem['price']*$cartItem['quantity'];
+                    $total_tax+=$cartItem['tax']*$cartItem['quantity'];
+                    $total_discount_on_product+=$cartItem['discount']*$cartItem['quantity'];
+                }
+                $total_shipping_cost=$shipping_cost;
+
+                $total_vnp_amount = $sub_total+$total_tax+$total_shipping_cost-$coupon_dis-$total_discount_on_product;
+            } else {
+                $total_vnp_amount = 0;
+            }
+
             $vnpay = Helpers::get_business_settings('vnpay');
             $vnp_TmnCode = $vnpay['vnp_TmnCode']; //Mã định danh merchant kết nối (Terminal Id)
             $vnp_HashSecret = $vnpay['vnp_HashSecret']; //Seret key
@@ -31,7 +56,7 @@ class VNPayController extends Controller
             $expire = date('YmdHis', strtotime('+15 minutes', strtotime($startTime)));
 
             $vnp_TxnRef = rand(1, 10000); //Mã giao dịch thanh toán tham chiếu của merchant
-            $vnp_Amount = 300000; // Số tiền thanh toán
+            $vnp_Amount = $total_vnp_amount; // Số tiền thanh toán
             $vnp_Locale = 'vn'; //Ngôn ngữ chuyển hướng thanh toán
             $vnp_BankCode = ''; //Mã phương thức thanh toán
             $vnp_IpAddr = $_SERVER['REMOTE_ADDR']; //IP Khách hàng thanh toán

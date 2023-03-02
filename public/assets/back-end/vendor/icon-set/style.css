@@ -2336,9 +2336,9 @@
 .tio-circle-outlined:before {
   content: "\ebfb";
 }
-.tio-circle:before {
+/* .tio-circle:before {
   content: "\ebfc";
-}
+} */
 .tio-cricket:before {
   content: "\ebfd";
 }
