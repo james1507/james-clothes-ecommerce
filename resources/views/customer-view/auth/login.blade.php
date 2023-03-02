@@ -126,7 +126,7 @@
                             </div>
                             @foreach (\App\CPU\Helpers::get_business_settings('social_login') as $socialLoginService)
                                 @if (isset($socialLoginService) && $socialLoginService['status']==true)
-                                    <div class="col-sm-6 text-center mb-1">
+                                    <div class="col-sm-12 text-center mb-1">
                                         <a class="btn btn-outline-primary"
                                            href="{{route('customer.auth.service-login', $socialLoginService['login_medium'])}}"
                                            style="width: 100%">

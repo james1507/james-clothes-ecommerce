@@ -32,7 +32,7 @@
                 <div class="alert alert-warning sticky-top" id="alert_box" style="display:none;">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     <strong>{{\App\CPU\translate('Warning')}}!</strong> {{\App\CPU\translate('Follow the documentation to setup from app end')}}, <a
-                        href="https://documentation.6amtech.com/sixvalley-ecommerce/docs/1.0/app-setup#section3"
+                        href="#"
                         target="_blank">{{\App\CPU\translate('click')}}
                         {{\App\CPU\translate('here')}}</a>.
                 </div>

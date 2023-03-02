@@ -65,9 +65,9 @@
                                         value="{{ $socialLoginService['client_secret'] }}">
                             </div>
                             <div class="d-flex justify-content-between flex-wrap gap-2">
-                                <button class="btn btn-outline--primary" type="button" data-toggle="modal" data-target="#{{$socialLoginService['login_medium']}}-modal">
+                                {{-- <button class="btn btn-outline--primary" type="button" data-toggle="modal" data-target="#{{$socialLoginService['login_medium']}}-modal">
                                     {{\App\CPU\translate('See_Credential_Setup_Instructions')}}
-                                </button>
+                                </button> --}}
                                 <button type="{{env('APP_MODE')!='demo'?'submit':'button'}}" class="btn btn--primary px-4">{{\App\CPU\translate('save')}}</button>
                             </div>
                         </form>

@@ -21,7 +21,7 @@
     @include('admin-views.business-settings.third-party-inline-menu')
     <!-- End Inlile Menu -->
 
-        <div class="row gy-3">
+        {{-- <div class="row gy-3">
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">
@@ -63,8 +63,8 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
+            </div> --}}
+            {{-- <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="mb-4 text-uppercase d-flex">{{\App\CPU\translate('PAYMENT_METHOD')}}</h5>
@@ -105,7 +105,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">

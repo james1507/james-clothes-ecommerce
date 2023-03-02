@@ -184,7 +184,7 @@
                                     <span class="text-truncate pr-2" title="{{\App\CPU\translate('Business_Setup')}}">{{\App\CPU\translate('Business_Setup')}}</span>
                                 </a>
                                 <a class="dropdown-item"
-                                   href="{{route('admin.business-settings.sms-module')}}">
+                                   href="{{route('admin.business-settings.mail.index')}}">
                                     <span class="text-truncate pr-2" title="{{\App\CPU\translate('3rd_party')}}">{{\App\CPU\translate('3rd_party')}}</span>
                                 </a>
                                 <a class="dropdown-item"
