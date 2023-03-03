@@ -2377,4 +2377,5 @@
   'Cart key or ID is required!' => 'Cart key or ID is required!',
   'successfully_removed' => 'Successfully removed',
   'vnpay' => 'Vnpay',
+  'Nguyễn Văn An' => 'Nguyễn Văn An',
 );

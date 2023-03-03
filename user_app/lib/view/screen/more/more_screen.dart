@@ -200,20 +200,20 @@ class _MoreScreenState extends State<MoreScreen> {
                                           count: 1,
                                           hasCount: false)
                                       : SizedBox(),
-                                  Provider.of<SplashProvider>(context,
-                                                  listen: false)
-                                              .configModel
-                                              .loyaltyPointStatus ==
-                                          1
-                                      ? SquareButton(
-                                          image: Images.loyalty_point,
-                                          title: getTranslated(
-                                              'loyalty_point', context),
-                                          navigateTo: LoyaltyPointScreen(),
-                                          count: 1,
-                                          hasCount: false,
-                                        )
-                                      : SizedBox(),
+                                  // Provider.of<SplashProvider>(context,
+                                  //                 listen: false)
+                                  //             .configModel
+                                  //             .loyaltyPointStatus ==
+                                  //         1
+                                  //     ? SquareButton(
+                                  //         image: Images.loyalty_point,
+                                  //         title: getTranslated(
+                                  //             'loyalty_point', context),
+                                  //         navigateTo: LoyaltyPointScreen(),
+                                  //         count: 1,
+                                  //         hasCount: false,
+                                  //       )
+                                  //     : SizedBox(),
                                   SquareButton(
                                     image: Images.shopping_image,
                                     title: getTranslated('orders', context),

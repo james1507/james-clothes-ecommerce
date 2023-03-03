@@ -137,7 +137,7 @@ class Helpers
 
     public static function rating_count($product_id, $rating)
     {
-        return Review::where(['product_id' => $product_id, 'rating' => $rating])->whereNull('delivery_man_id')->count();
+        return Review::where(['product_id' => $product_id, 'rating' => $rating])->whereNull('customer_id')->count();
     }
 
     public static function get_business_settings($name)

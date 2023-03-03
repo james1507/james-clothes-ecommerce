@@ -106,7 +106,7 @@ class Product extends Model
     {
         return $this->hasMany(Review::class)
             ->select(DB::raw('avg(rating) average, product_id'))
-            ->whereNull('delivery_man_id')
+            ->whereNull('customer_id')
             ->groupBy('product_id');
     }
 

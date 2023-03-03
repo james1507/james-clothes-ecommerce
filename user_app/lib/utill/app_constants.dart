@@ -4,7 +4,7 @@ class AppConstants {
   static const String APP_NAME = 'James Clothes';
   static const String APP_VERSION = '12.1';
   static const String BASE_URL =
-      'http://192.168.16.103/james-clothes-ecommerce';
+      'http://192.168.67.168/james-clothes-ecommerce';
   static const String USER_ID = 'userId';
   static const String NAME = 'name';
   static const String CATEGORIES_URI = '/api/v1/categories';
